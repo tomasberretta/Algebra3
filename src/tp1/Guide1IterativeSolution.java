@@ -26,8 +26,11 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_1_e(int n) {
-        //todo
-        return 0;
+        int result = 0;
+        for (int i = 1; i <= n ; i++) {
+            result+= i*(i+1);
+        }
+        return result;
     }
 
     @Override
@@ -42,8 +45,11 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_2_b(int n) {
-        //todo
-        return 0;
+        int result = 1;
+        for (int i = 0; i < n; i++) {
+            result = result*2;
+        }
+        return result;
     }
 
     @Override
@@ -58,8 +64,12 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_3(int n) {
-        //todo
-        return 0;
+        String numberString = ((Integer)n).toString();
+        int counter = 0;
+        for (int i = 0; i < numberString.length(); i++) {
+            if (numberString.charAt(i) == '0') counter++;
+        }
+        return counter;
     }
 
     @Override
@@ -79,8 +89,25 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_6_b_ii(int n) {
-        //todo
-        return 0;
+        if (isPrime(n)) return n;
+        int prime = n;
+        for (int i = 0; i >=0; i++) {
+            prime++;
+            if(isPrime(prime)) return prime;
+        }
+        return prime;
+
+    }
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
@@ -95,7 +122,9 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_8(int[] coefs, int n) {
-        //todo
-        return 0;
+        int result = coefs[coefs.length-1];
+        for (int i=coefs.length-2; i>=0; i--)
+            result = result*n + coefs[i];
+        return result;
     }
 }
