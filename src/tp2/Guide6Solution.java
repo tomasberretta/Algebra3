@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * @author Tomas Bruno, Tomas Berretta
+ */
+
 public class Guide6Solution implements Guide6 {
 
     @Override
