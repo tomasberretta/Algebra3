@@ -1,14 +1,14 @@
 package test;
 
 import org.junit.Test;
-import test.utils.Guide6Helpers;
-import test.utils.SkipRule;
 import tp3.Guide7;
 import tp3.Guide7Solution;
 import tp3.utils.Matrix;
 import tp3.utils.MatrixMatrixOperation;
 import tp3.utils.MatrixVectorOperation;
 import tp3.utils.Vector;
+import test.utils.Guide6Helpers;
+import test.utils.SkipRule;
 
 import java.util.ArrayList;
 import java.util.Arrays;

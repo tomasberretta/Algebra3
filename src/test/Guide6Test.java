@@ -2,11 +2,11 @@ package test;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
-import test.utils.SkipRule;
 import tp2.Guide6;
 import tp2.Guide6Solution;
 import tp2.utils.Infraction;
 import tp2.utils.Survey;
+import test.utils.SkipRule;
 
 import static org.junit.Assert.*;
 
@@ -96,14 +96,17 @@ public class Guide6Test extends SkipRule {
         assertFalse(guide6.exercise_3(new int[]{}));
         assertFalse(guide6.exercise_3(new int[]{1, 1, 2, 3, 5, 6}));
         assertTrue(guide6.exercise_3(new int[]{5, 8, 113, 238, 112}));
+        assertTrue(guide6.exercise_3(new int[]{21, 1, 2, 3, 4, 5, 6}));
     }
 
     @Test
+    //    El primer elemento no puede ser negativo, si el primer elemento es negativo debe devolver falso"
     public void exercise_4() {
         assertTrue(guide6.exercise_4(new int[]{3, -1, 3, -5}));
         assertFalse(guide6.exercise_4(new int[]{-3, 11, -3, -5}));
         assertTrue(guide6.exercise_4(new int[]{0, 5, -3, -2}));
         assertFalse(guide6.exercise_4(new int[]{0, 5, -3, -2, 1}));
+        assertFalse(guide6.exercise_4(new int[]{1, -8, 3, 11, -7}));
     }
 
     @Test

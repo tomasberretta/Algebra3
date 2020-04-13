@@ -4,10 +4,10 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import test.utils.SkipRule;
 import tp1.Guide1;
 import tp1.Guide1IterativeSolution;
 import tp1.Guide1RecursiveSolution;
+import test.utils.SkipRule;
 
 import java.util.ArrayList;
 import java.util.Arrays;

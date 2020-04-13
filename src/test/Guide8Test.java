@@ -1,10 +1,10 @@
 package test;
 
 import org.junit.Test;
-import test.utils.Guide7Helpers;
-import test.utils.SkipRule;
 import tp4.Guide8;
 import tp4.Guide8Solution;
+import test.utils.Guide7Helpers;
+import test.utils.SkipRule;
 
 import static org.junit.Assert.assertArrayEquals;
 
