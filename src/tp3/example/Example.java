@@ -31,7 +31,7 @@ public class Example {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-//                If i == j the matrix has a zero, so we skip it, thus making less calculations
+//                If i == j the matrix has a zero, so we skip it, making less calculations
                 if (i != j)
                     result[i] += op.multiplyPositions(i, j, j);
             }

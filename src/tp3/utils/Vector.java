@@ -23,6 +23,28 @@ public class Vector {
         return vector.length;
     }
 
+    public void print() {
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String toString() {
+        int vectorSize = this.getVectorSize();
+        int bracesCount = vectorSize * 2;
+        StringBuilder builder = new StringBuilder(vectorSize + bracesCount);
+
+        for (int element : vector) {
+            builder.append("(")
+                    .append("\t")
+                    .append(element)
+                    .append("\t")
+                    .append(")")
+                    .append("\n");
+        }
+
+        return builder.toString();
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Vector)) {

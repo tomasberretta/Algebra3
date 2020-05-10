@@ -33,6 +33,24 @@ public class MatrixVectorOperation {
         }
     }
 
+    public void print() {
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String toString() {
+        String matrix = this.matrix != null ? this.matrix.toString() : "";
+        String vector = this.vector != null ? this.vector.toString() : "";
+        String result = this.result != null ? this.result.toString() : "";
+
+        return "Matrix:" + "\n" +
+                matrix + "\n" +
+                "Vector:" + "\n" +
+                vector + "\n" +
+                "Result:" + "\n" +
+                result + "\n";
+    }
+
     public int multiplyPositions(int i1, int j1, int i2) {
         return matrix.getValue(i1, j1) * vector.getValue(i2);
     }

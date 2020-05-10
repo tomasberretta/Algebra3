@@ -21,6 +21,12 @@ public interface Guide7 {
 
     int[][] exercise_1_g(int[][] A);
 
+    int exercise_1_h(int[][] A);
+
+    int exercise_1_i(int[][] A);
+
+    int[][] exercise_1_j(int[][] A, int c);
+
     // Exercise 2
     boolean exercise_2_a(int[][] A);
 
@@ -55,10 +61,4 @@ public interface Guide7 {
 
     // Exercise 4
     List<double[]> exercise_4(List<double[]> A);
-
-    int exercise_5_a(int[][] A);
-
-    int exercise_5_b(int[][] A);
-
-    int[][] exercise_5_c(int[][] A, int c);
 }

@@ -43,6 +43,15 @@ public class Guide7Solution implements Guide7 {
     }
 
     @Override
+    public int exercise_1_h(int[][] A) { throw new UnsupportedOperationException("TODO"); }
+
+    @Override
+    public int exercise_1_i(int[][] A) { throw new UnsupportedOperationException("TODO"); }
+
+    @Override
+    public int[][] exercise_1_j(int[][] A, int c) { throw new UnsupportedOperationException("TODO"); }
+
+    @Override
     public boolean exercise_2_a(int[][] A) {
         throw new UnsupportedOperationException("TODO");
     }
@@ -121,13 +130,4 @@ public class Guide7Solution implements Guide7 {
     public List<double[]> exercise_4(List<double[]> A) {
         throw new UnsupportedOperationException("TODO");
     }
-
-    @Override
-    public int exercise_5_a(int[][] A) { throw new UnsupportedOperationException("TODO"); }
-
-    @Override
-    public int exercise_5_b(int[][] A) { throw new UnsupportedOperationException("TODO"); }
-
-    @Override
-    public int[][] exercise_5_c(int[][] A, int c) { throw new UnsupportedOperationException("TODO"); }
 }
