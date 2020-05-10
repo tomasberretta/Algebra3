@@ -1,7 +1,9 @@
 package tp3;
 
+import tp3.utils.Matrix;
 import tp3.utils.MatrixMatrixOperation;
 import tp3.utils.MatrixVectorOperation;
+import tp3.utils.Vector;
 
 import java.util.List;
 
@@ -9,7 +11,12 @@ public class Guide7Solution implements Guide7 {
 
     @Override
     public int exercise_1_a(int[][] A) {
-        throw new UnsupportedOperationException("TODO");
+        Matrix matrix = new Matrix(A);
+        int result = 0;
+        for (int i = 0; i < matrix.getRows(); i++) {
+            result += matrix.getValue(i,i);
+        }
+        return result;
     }
 
     @Override
@@ -53,12 +60,27 @@ public class Guide7Solution implements Guide7 {
 
     @Override
     public boolean exercise_2_a(int[][] A) {
-        throw new UnsupportedOperationException("TODO");
+        Matrix matrix = new Matrix(A);
+        for (int i = 0; i < matrix.getRows(); i++) {
+            for (int j = 0; j < matrix.getColumns(); j++) {
+                if(matrix.getValue(i,j) != matrix.getValue(j,i)) return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public boolean exercise_2_b(int[][] A) {
-        throw new UnsupportedOperationException("TODO");
+        Matrix matrix = new Matrix(A);
+        for (int i = 0; i < matrix.getRows(); i++) {
+            int diagValue = Math.abs(matrix.getValue(i,i));
+            int rowValue = 0;
+            for (int j = 0; j < matrix.getColumns(); j++) {
+                if(i != j) rowValue += Math.abs(matrix.getValue(i,j));
+            }
+            if(diagValue <= rowValue) return false;
+        }
+        return true;
     }
 
     @Override
@@ -73,7 +95,18 @@ public class Guide7Solution implements Guide7 {
 
     @Override
     public MatrixMatrixOperation exercise_3_a_iii(MatrixMatrixOperation op) {
-        throw new UnsupportedOperationException("TODO");
+        int[][] result = new int[op.getMatrix1().getRows()][op.getMatrix1().getColumns()];
+        for (int i = 0; i < op.getMatrix1().getColumns(); i++) {
+            for (int j = 0; j < op.getMatrix1().getColumns(); j++) {
+                if(j < i) continue;
+                for (int k = 0; k <= j; k++) {
+                    if(k<i)continue;
+                    result[i][j] += op.multiplyPositions(i,k,k,j);
+                }
+            }
+        }
+        op.setResult(new Matrix(result));
+        return op;
     }
 
     @Override
