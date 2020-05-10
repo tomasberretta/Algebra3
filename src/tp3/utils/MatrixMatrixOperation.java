@@ -33,6 +33,24 @@ public class MatrixMatrixOperation {
         }
     }
 
+    public void print() {
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String toString() {
+        String matrix1 = this.matrix1 != null ? this.matrix1.toString() : "";
+        String matrix2 = this.matrix2 != null ? this.matrix2.toString() : "";
+        String result = this.result != null ? this.result.toString() : "";
+
+        return "Matrix 1:" + "\n" +
+                matrix1 + "\n" +
+                "Matrix 2:" + "\n" +
+                matrix2 + "\n" +
+                "Result:" + "\n" +
+                result + "\n";
+    }
+
     public int multiplyPositions(int i1, int j1, int i2, int j2) {
         return matrix1.getValue(i1, j1) * matrix2.getValue(i2, j2);
     }
