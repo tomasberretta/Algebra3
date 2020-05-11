@@ -3,8 +3,8 @@ package tp3;
 import tp3.utils.Matrix;
 import tp3.utils.MatrixMatrixOperation;
 import tp3.utils.MatrixVectorOperation;
-import tp3.utils.Vector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Guide7Solution implements Guide7 {
@@ -161,6 +161,60 @@ public class Guide7Solution implements Guide7 {
 
     @Override
     public List<double[]> exercise_4(List<double[]> A) {
-        throw new UnsupportedOperationException("TODO");
+        ArrayList<double[]> result = new ArrayList<>();
+        result.add(normalise(A.get(0)));
+        for(int i=1; i < A.size(); i++) {
+            double [] toAdd = orthogonalise(A.get(i), result.get(i-1));
+            for(int j = i-1; j > 0; j--) {
+                toAdd = orthogonalise(toAdd, proyection(result.get(j-1),A.get(i)));
+            }
+            result.add(normalise(toAdd));
+        }
+        return result;
+    }
+
+    public double[] substractVectors(double[] v1, double[] v2) {
+        double[] finalVector= new double[v1.length];
+        for(int i=0; i<v1.length; i++) {
+            finalVector[i] = v1[i] - v2[i];
+        }
+        return finalVector;
+    }
+
+    public double[] vectorScalarProduct(double scalar, double[] v1) {
+        double[] result = new double[v1.length];
+        for(int i=0; i<v1.length; i++) {
+            result[i] = scalar*v1[i];
+        }
+        return result;
+    }
+
+    public double vectorDotProduct(double[] v1, double[] v2) {
+        double result = 0;
+        for (int i = 0; i < v1.length; i++) {
+            result += v1[i] * v2[i];
+        }
+        return result;
+    }
+
+    public double[] orthogonalise(double[] v1, double[] v2){
+        return substractVectors(v1, proyection(v2,v1));
+    }
+
+    public double[] normalise(double [] v1){
+        return vectorScalarProduct(1/(norm(v1)), v1);
+    }
+
+    public double[] proyection(double[] v1, double[] v2) {
+        double dotProductResult= vectorDotProduct(v1,v2);
+        return vectorScalarProduct(dotProductResult, v1);
+    }
+
+    public double norm (double[] vector) {
+        double result = 0;
+        for (double v : vector) {
+            result += Math.pow(v, 2);
+        }
+        return Math.sqrt(result );
     }
 }
