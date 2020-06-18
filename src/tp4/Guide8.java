@@ -1,5 +1,7 @@
 package tp4;
 
+import tp4.answers.utils.MatrixContainer;
+
 public interface Guide8
 {
 	// Exercise 5
@@ -14,4 +16,7 @@ public interface Guide8
 
 	// Exercise 9
 	double[][] exercise_9(double[][] A);
+
+	//	Exercise 10
+	MatrixContainer exercise_10(double[][] A);
 }

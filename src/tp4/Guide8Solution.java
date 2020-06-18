@@ -1,5 +1,7 @@
 package tp4;
 
+import tp4.answers.utils.MatrixContainer;
+
 public class Guide8Solution implements Guide8 {
 
     // Exercise 5
@@ -29,5 +31,10 @@ public class Guide8Solution implements Guide8 {
     // Exercise 9
     @Override
     public double[][] exercise_9(double[][] A) {throw new UnsupportedOperationException("TODO");}
+
+    @Override
+    public MatrixContainer exercise_10(double[][] A) {
+        throw new UnsupportedOperationException("TODO");
+    }
 
 }
