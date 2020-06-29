@@ -8,27 +8,27 @@ public class Guide8Solution implements Guide8 {
     @Override
     public double[] exercise_5_a(double[][] A, double[] b) {
         int n = b.length;
-        double aux;
+        double pivot;
         for (int k = 0; k < n ; k++){
-            aux = A[k][k];
+            pivot = A[k][k];
             for (int j = k; j < n; j++ )
-                A[k][j]=A[k][j]/aux;
-            b[k] = b[k]/aux;
+                A[k][j]=A[k][j]/pivot;
+            b[k] = b[k]/pivot;
             for (int i = k+1; i < n ; i++){
-                aux = A[i][k];
+                pivot = A[i][k];
                 for (int j = k; j < n; j++)
-                    A[i][j]=A[i][j] - aux*A[k][j];
-                b[i]= b[i]-aux*b[k];
+                    A[i][j]=A[i][j] - pivot*A[k][j];
+                b[i]= b[i]-pivot*b[k];
             }
         }
         double[] x = new double[n];
-        double suma;
+        double sum;
         x[n-1] = b[n-1];
         for (int i = n-2; i >= 0 ; i--){
-            suma =0;
+            sum =0;
             for (int j = i+1; j < n; j++ )
-                suma = suma + A[i][j]*x[j];
-            x[i]= b[i]-suma;
+                sum = sum + A[i][j]*x[j];
+            x[i]= b[i]-sum;
         }
         return x;
     }
